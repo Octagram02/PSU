@@ -1,0 +1,43 @@
+body{
+margin: 0;
+padding: 0;
+}
+.container{
+text-align:center;
+}
+
+.btn{
+background: none;
+border: 3px #21b0db;
+padding: 10px 20 px;
+font-size: 60px;
+font-family: "poppins",sans-serif;
+cursor: pointer;
+margin: 20px;
+transition: 0.8s;
+position: relative;
+overflow: hidden;
+border-radius:10px;
+}
+
+.btn1{
+background: #21b0db;
+color:white;
+box-shadow: -5px 8px 10px #1a7e9c;
+}
+.btn2{
+background: #21b0db;
+color:white;
+box-shadow: -5px 8px 10px #1a7e9c;
+}
+
+.btn1:hover,.btn2:hover{
+transform: translateY(4px);
+box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+color: #fff;
+
+}
+
+
+
+

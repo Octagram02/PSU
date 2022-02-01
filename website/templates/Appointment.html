@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}Appointment{% endblock %} {% block
+content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'navbardesign.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'button2.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'appoint.css')}}">
+<div class="p1">
+<p>SELECT A VACCINATION APPOINTMENT</p>
+</div>
+
+<div class="container">
+    <a href="/1st-dose">
+    <button class="btn btn1">1st Dose</button></a>
+    <a href="booster">
+     <button class="btn btn2">Booster</button></a>
+</div>
+
+
+
+{% endblock %}

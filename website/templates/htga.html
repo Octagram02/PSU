@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}How to get an appointment{% endblock %}
+{% block content %}
+<body style="background-color:#fafcff;"></body>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'htga.css')}}">
+<img class="picture" src="static/bg1.png" alt="psu">
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap" rel="stylesheet">
+
+<p style="text-align:center;font-size:50px; position:relative; top:430px; font-family: 'Poppins', sans-serif;text-shadow: 3px 3px 3px #ababab;">Select a category</p>
+
+<a href="/htga1">
+<img class="picture1 zoom image" src="static/pic1.png" alt="psu">
+</a>
+
+<a href="/htga3">
+<img class="picture1 zoom image" src="static/pic3.png" alt="psu">
+</a>
+{% endblock %}

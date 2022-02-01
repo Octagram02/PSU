@@ -1,0 +1,51 @@
+{% extends 'base.html'%}{% block title %}PSU Online Vaccination{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'navbardesign.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'background.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'buttons.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css')}}">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+<a href="https://psu.edu.ph/" target="blank">
+<img class="picture" src="static/psu.png" alt="psu">
+</a>
+<div class="p1"><span>
+  <b><span style ="font-family: 'Oswald', sans-serif;">PSU</span></b>
+  <b><span style ="font-family: 'Oswald', sans-serif; color:Gold;">VAX</span></b>
+</span></div>
+<div class="flex">
+  <a style ="font-family: 'Oswald', sans-serif;" href="/appointment" class="bttn">SCHEDULE YOUR APPOINTMENT</a>
+</div>
+
+ <div class="popup">
+        <button id="close">&times;</button>
+        <h2 style="color:white; background-color: red; height:50px; padding:7px">Paunawa</h2>
+     <b>
+        <p>
+            •	Libre ang  bakuna sa lahat.
+        </p>
+     <p>•	Para sa magpabakuna tanging 400 slot lamang kada araw ang pwedeng makapag pa skedyul ng appointment. Kung ang napili mong araw ay wala ng available slot ito’y aming i-reschedule at padadalhan ka ng email at text ng kung anong araw ka na appoint para mabakunahan.</p>
+     <p>•	Isasailalim sa revalidation, briefing at medical screening ang kliyente bago bakunahan.</p>
+     <p>•	Kumpletuhin ang dalawang dosage ng bakuna para sa COVID-19.</p>
+     <p>•	18 taong gulang pataas lamang ang maaaring bigyan ng bakuna sa naka skedyul na petsa.</p>
+     <p>•	Ang vaccination site ay matatagpuan lamang sa Pangasinan State University Urdaneta Campus (PSU).</p>
+     <p>•	Ang vaccination site ay bukas lamang tuwing lunes hanggang biyernes ng 8:00 AM to 4:00 PM.</p>
+    </b>
+ </div>
+    <!--Script-->
+    <script>
+    window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        1000
+    )
+});
+document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+</script>
+
+
+{% endblock %}

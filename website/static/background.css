@@ -1,0 +1,108 @@
+/* background */
+body{
+    padding-left: 0px;
+    margin: 0;
+    background: url(background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 700px 600px;
+    background-position: center right 30px;
+    }
+
+ h1{
+font-size: 8em;
+margin:0;
+text-align:center;
+font-family:Impact;
+color:blue;
+  -webkit-text-stroke: 3px black;
+}
+
+h5, h5:visited{
+display: table;
+background-color: white;
+padding: 14px 25px;
+font-size: 3.3em;
+margin: 0px auto 0px auto;
+padding-top:10px;
+font-family:Impact;
+color:	#0000FF;
+border: 8px solid gold;
+border-radius: 8px
+}
+
+h5:hover, h5:active{
+background-color: blue;
+  color: white;
+  opacity:0.8
+
+}
+.picture{
+width:450px;
+position: absolute;
+top: 80px;
+left: 23px;
+
+}
+.title2{
+background-color:  #004cff;
+padding-top:25px;
+text-align:center;
+font-family:Impact;
+color:white;
+-webkit-text-stroke: 3px #004cff;
+border-radius: 10px;
+  border-style: solid;
+  border-color:  white;
+
+}
+.p1{
+font-size:120px;
+font-family:Times New Roman;
+top: 300px;
+left: 20px;
+position: relative;
+text-shadow: -4px 4px 3px grey;
+color: blue;
+
+}
+
+/* design para sa text sa appointment*/
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  background-color: transparent;
+  text-decoration: None;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: None;
+}
+
+
+.picture1{
+width:500px;
+position: relative;
+left: 50px;
+}
+
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+.image {
+        position: relative;
+        transition: 0.6s;
+      }
+
+.margin-left{
+margin-left: 80px !important;
+}
+

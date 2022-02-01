@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %}How to get an appointment{% endblock %} {% block
+content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'htga.css')}}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins&display=swap" rel="stylesheet">
+<h1 style="text-align:center;font-size:40px;font-family: 'Roboto Slab', serif;text-shadow: 3px 3px 3px #ababab;"> HOW TO GET APPOINTED </h1>
+<img class="picture2" src="static/step1.png" alt="psu">
+<br>
+<br>
+<br>
+<p style="font-size:25px;font-family: 'Libre Baskerville', serif;text-align:center;"> Fill out the given credentials </p>
+<img class="picture3" src="static/form1.png" alt="psu">
+<br>
+<img class="picture2" src="static/step2.png" alt="psu">
+<br>
+<br>
+<br>
+
+<p style="font-size:25px;font-family: 'Libre Baskerville', serif;text-align:center;"> Answer the Health and Medical history </p>
+<img class="picture3" src="static/form2.png" alt="psu">
+<br>
+<img class="picture2" src="static/step3.png" alt="psu">
+<br>
+<br>
+<br>
+<p style="font-size:25px;font-family: 'Libre Baskerville', serif;text-align:center;"> Select a Vaccine, Time and Date to Get Vaccinated </p>
+<img class="picture3" src="static/form3.png" alt="psu">
+<br>
+<img class="picture2" src="static/step4.png" alt="psu">
+<br>
+<br>
+<br>
+<p style="font-size:25px;font-family: 'Libre Baskerville', serif;text-align:center;"> Click Register</p>
+<img class="picture4" src="static/register_button.png" alt="psu">
+<br>
+<a href="/htga">
+<button style="left:250px; " class="btn btn-outline-primary" type="submit">Back</button>
+</a>
+{% endblock %}

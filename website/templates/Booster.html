@@ -1,0 +1,292 @@
+{% extends "base.html" %} {% block title %}Booster{% endblock %} {% block
+content %}
+<!---
+gives access to css files
+--->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'navbardesign.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'form.css')}}">
+
+<!---
+gives access to google fonts
+--->
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Krub:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">
+
+  <form method="post" autocomplete="off" name="google-sheet"> <!---database handling --->
+
+  <div class="center">
+      <div class="content">
+
+
+  <h2 style ="font-family: 'Archivo Black', sans-serif; font-size:50px;" align="center">Booster</h2>
+
+<!--full name part --->
+  <div class="form-group">
+      <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;" for="fullname">Full Name <small>(Buong Pangalan)</small></label></b>
+    <input
+      type="text"
+      class="form-control"
+      id="fullname"
+      name="fullname"
+      placeholder="Enter full name"
+      required
+
+    />
+  </div>
+
+<!--- gender and age part --->
+ <div class="form-group" >
+
+    <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;">Gender <small>(Kasarian)</small></label></b><br>
+     <span class ="checkboxtext">
+  <input type="radio" id="male" name="gender" value="MALE" style="font-size: 11px;">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="FEMALE">
+  <label for="female">Female</label><br>
+  <input type="radio" id="others" name="gender" value="OTHERS">
+  <label for="others">Others</label><br>
+     </span>
+
+     <b> <label style = "font-family: 'Krub', sans-serif; font-size:17px;" >Age <small>(Edad)</small></label><br></b>
+  <input type="radio" id="18" name="age" value="18 - 59 years old" required>
+  <label for="18">18 - 59 years old</label><br>
+  <input type="radio" id="60" name="age" value="60 years and above" required>
+  <label for="60">60 years and above</label><br>
+ </div>
+
+<!--- email address part --->
+  <div class="form-group">
+      <b> <label style = "font-family: 'Krub', sans-serif; font-size:17px;">Email Address</label></b>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      required
+    />
+  </div>
+
+<!--- phone address part --->
+  <div class="form-group">
+    <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;">Contact Number <small>(Numero ng Telepono)</small></label></b>
+    <input
+      type="text"
+      class="form-control"
+      id="phone-number"
+      name="phone"
+      placeholder="(+63) 000-000-0000"
+      required
+    />
+  </div>
+<!--- Address --->
+  <div class="form-group">
+      <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;">Address <small>(Tirahan)</small></label></b>
+    <input
+      type="text"
+      class="form-control"
+      id="address"
+      name="street"
+      placeholder="Enter street address"
+      required
+    />
+    <p style = "font-family: 'Krub', sans-serif; font-size:17px;" id="st" ><span class="small">example: #123 daniel maramba st., Poblacion Norte</span></p>
+  </div>
+
+  <div class="form-group">
+    <label for="address1"></label>
+    <input
+      type="text"
+      class="form-control"
+      id="address1"
+      name="city"
+      placeholder="Enter town or city"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address2"></label>
+    <input
+      type="text"
+      class="form-control"
+      id="address2"
+      name="province"
+      placeholder="Enter province"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address3"></label>
+    <input
+      type="text"
+      class="form-control"
+      id="address3"
+      name="zip"
+      placeholder="Enter postal/zip-code"
+    />
+  </div>
+
+<br>
+<hr class="new4">
+
+<!--- 2nd part  --->
+<h2 style= "font-family: 'Archivo Black', sans-serif;" align="center">Health and Medication History</h2>
+
+<!--- health condition part  --->
+  <div class="form-group">
+      <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;">Do you have any chronic health condition? <small>(Mayroon ka bang malalang kondisyon sa kalusugan?)</small></label><br></b>
+    <textarea id='question1' name= 'health' rows="4" cols="86" placeholder="Describe yourself here..."></textarea>
+      <p style = "font-family: 'Krub', sans-serif; font-size:17px; " id="as" ><span class="small"  >Please indicate all health issues that are considered within the risk group</span></p>
+  </div><br>
+
+<!--- medication part  --->
+      <b> <label style = "font-family: 'Krub', sans-serif; font-size:17px; " for="Medication">Please list your current medication <small>(Pakilista ang iyong kasalukuyang gamot)</small></label><br></b>
+    <div class="form-row col-md-4 mb-3">
+      <input type="text" class="form-control" id="Medication" name="med" placeholder="Medication">
+        </div>
+
+        <div class="form-row col-md-4 mb-3">
+      <input type="text" class="form-control" id="Dosage" name="dose" placeholder="Dosage">
+  </div>
+
+<!--- allergies part  --->
+      <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;">Please list your allergies <small>(Pakilista ang iyong mga allegry)</small></label><br></b>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <input type="text" class="form-control" id="allergy" name="allergy" placeholder="Allergic to">
+    </div>
+
+    </div>
+<!--- symptoms part  --->
+      <b><br><label style = "font-family: 'Krub', sans-serif; font-size:17px;" >Please check  the symptoms  that apply <small>(Pakisuri ang mga sintomas na nalalapat)</small></label></b><br>
+  <input type="checkbox" id="symp1" name="symp1" value="Loss of taste or smell">
+  <label for="symp1">Loss of taste or smell</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <input type="checkbox" id="symp2" name="symp2" value="High Fever">
+  <label for="symp2">High Fever</label><br>
+  <input type="checkbox" id="symp3" name="symp3" value="Difficulty in Breathing">
+  <label for="symp3">Difficulty in Breathing</label>&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
+  <input type="checkbox" id="symp4" name="symp4" value="Body Aches">
+  <label for="symp4">Body Aches</label><br>
+  <input type="checkbox" id="symp5" name="symp5" value="Runny Nose">
+  <label for="symp5">Runny Nose</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <input type="checkbox" id="symp6" name="symp6" value="Diarrhea">
+  <label for="symp6">Diarrhea</label><br>
+  <input type="checkbox" id="symp7" name="symp7" value="Cough">
+  <label for="symp7">Cough</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+  <input type="checkbox" id="symp8" name="symp8" value="Diarrhea">
+  <label for="symp8">Pressure on chest</label><br>
+  <input type="checkbox" id="symp9" name="symp9" value="Nasal congestion">
+  <label for="symp9">Nasal Congestion</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;&nbsp;
+  <input type="checkbox" id="symp10" name="symp10" value="Sore throat">
+  <label for="symp10">Sore throat</label><br>
+  <input type="checkbox" id="none" name="none" value="None">
+  <label for="none">None </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
+  <input type="checkbox" id="other" name="other" value="">
+  <label for="other">Other</label><br>
+      <br>
+
+<!--- diagnosed with covid part  --->
+  <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;">Have you been diagnosed with  COVID-19? <small>(Na-diagnose ka na ba na may COVID-19?)</small></label><br></b>
+  <input type="radio" id="yes" name="covid-19" value="YES" required onclick="EnableDisableTextBox()">
+  <label for="yes">Yes</label><br>
+  <input type="radio" id="no" name="covid-19" value="NO" required onclick="EnableDisableTextBox()" >
+  <label for="no">No</label><br>
+
+<!--- text area part part  --->
+  <div class="form-group">
+     <b><label style = "font-family: 'Krub', sans-serif; font-size:12.5px;">If yes, please provide further details(date of diagnosis, were you hospitalized or not,treatment,etc.)</label><br></b>
+    <textarea id='ifyes' name= 'ifyes' rows="4" cols="86" placeholder="Describe yourself here..." disabled="disabled"></textarea>
+  </div>
+  <br>
+
+<hr class="new4">
+
+<!--- 3rd Part  --->
+  <h1 style= "font-family: 'Archivo Black', sans-serif;" align="center">Appointment</h1>
+
+<!--- selecting a appointment date part --->
+ <div class="form-group col-md-6 mb-3">
+     <b><label style = "font-family: 'Krub', sans-serif; font-size:17px;" for="start" >When did you get fully vaccinated?</label></b>
+
+<input type="date" id="start" name="Schedule" required >
+  </div>
+
+<!--- selecting a vaccine part --->
+<div class="form-group col-md-6 mb-3">
+    <b><label  style = "font-family: 'Krub', sans-serif; font-size:17px;">Select a Vaccine:</label></b>
+<select id="vaccine" name="vaccine" required>
+	<option value="select">Select</option>
+	<option value="pfizer">Pfizer</option>
+	<option value="moderna">Moderna</option>
+	<option value="johnson&johnson">Johnson&Johnson</option>
+    <option value="sinovac">Sinovac</option>
+	<option value="aztrazeneca">Atrazeneca</option>
+</select>
+</div>
+
+          <br>
+<p style="color:red; font-weight:bold; text-align:center;">*Ang pagclick sa register button ay nangangahulugan na pumapayag ka na mabakunahan ng para sa Covid-19 vaccine.*</p>
+<!--- checking part --->
+           <input type="checkbox" id="terms_and_conditions" value="1" onclick="terms_changed(this)" />
+     <label for="terms_and_conditions"> I agree that the given informations are accurate.</label>
+
+<br>
+
+<!--- register button part --->
+          <form action="/">
+ <button type="submit" class="btn btn-outline btn-success" id="submit_button" disabled>Register</button>
+              </form>
+
+</div>
+      </div>
+</form>
+
+<!--- script for data handling part --->
+  <script type="text/javascript">
+
+
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycby_qz8jbv2ZojTY5seFqTgTPGBUQWn8SO2X9lUt2sqtUAsOdxPsLADg0NFNCb86lyz_/exec'
+            const form = document.forms['google-sheet']
+
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("You have successfully registered!."))
+                .catch(error => console.error('Error!', error.message))
+            })
+  </script>
+
+<!--- script for enable/disable register button part --->
+<script>
+ //JavaScript function that enables or disables a submit button depending
+//on whether a checkbox has been ticked or not.
+function terms_changed(termsCheckBox){
+    //If the checkbox has been checked
+    if(termsCheckBox.checked){
+        //Set the disabled property to FALSE and enable the button.
+        document.getElementById("submit_button").disabled = false;
+    } else{
+        //Otherwise, disable the submit button.
+        document.getElementById("submit_button").disabled = true;
+    }
+}
+</script>
+
+<!--- script for enable/disable covid textarea part --->
+<script type="text/javascript">
+    function EnableDisableTextBox() {
+        var yes = document.getElementById("yes");
+        var ifyes = document.getElementById("ifyes");
+        ifyes.disabled = yes.checked ? false : true;
+        if (!ifyes.disabled) {
+            ifyes.focus();
+        }
+    }
+</script>
+
+
+{% endblock %}
